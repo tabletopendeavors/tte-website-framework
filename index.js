@@ -52,7 +52,7 @@ async function go_home() {
         return;
     }
     await set_fade_on_div("content", true);
-    await set_div_content_from_file( "content", home_page + ".html" );
+    await set_div_content_from_file( "content", "content/" + home_page + ".html" );
     window.history.replaceState(null, null, "?page=" + home_page );
     await set_fade_on_div("content", false);
 }
@@ -92,7 +92,7 @@ async function set_article_page_display( state ) {
 
 async function load_article( target_article ) {
     set_article_page_display( article_page_display.article );
-    register_article_observers();
+    register_observers();
     await set_div_content_from_file( "article-content", "content/articles/" + target_article + ".html" );
     const title_element = document.getElementById( "article-title-header" );
     const hidden_title_element = document.getElementById( "article-title" );
@@ -113,13 +113,13 @@ async function load_site() {
     const url_params = new URLSearchParams( window.location.search );
     const page_param = url_params.get( "page" );
     if( page_param && page_exists( page_param ) ) {
-        await set_div_content_from_file( "content", page_param + ".html"  );
+        await set_div_content_from_file( "content", "content/" + page_param + ".html"  );
         const article_param = url_params.get( "article" );
         if( article_param ) {
             load_article( article_param );
         }
     } else {
-        await set_div_content_from_file( "content", home_page + ".html"  );
+        await set_div_content_from_file( "content", "content/" + home_page + ".html"  );
     }
     addEventListener( "scroll", (event) => {
         const scroll_y = window.scrollY;
@@ -148,7 +148,7 @@ async function navigate_to_page( target_page ) {
         }
     }
     await set_fade_on_div( "content", true );
-    await set_div_content_from_file( "content", target_page + ".html" );
+    await set_div_content_from_file( "content", "content/" + target_page + ".html" );
     window.history.replaceState(null, null, "?page=" + target_page );
     await set_fade_on_div( "content", false );
 }
