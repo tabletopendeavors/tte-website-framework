@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TableTop Endeavors</title>
+    <link rel="icon" type="image/x-icon" href="content/images/logo.png">
+    <meta name="description" content="The personal site for content creator TableTop Endeavors." />
+    <meta name="keywords" content="table, top, game, gaming, battletech, warhammer, dungeons, dragons, tutorial, youtube" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+</head>
+<body onload="load_site()">
+    <div id="modal" onclick="close_modal()">
+        <div id="modal-content">
+            <img id="modal-image" src="" />
+        </div>
+    </div>
+    <div id="banner">
+        <button id="banner-logo" onclick="go_home()">
+            <img src="content/images/logo.png" />
+        </button>
+        <div id="banner-text">
+            <h1>TableTop Endeavors</h1>
+            <p class="subtitle">Your Average Hobbyist Sharing His Creativity</p>
+        </div>
+        <div id="banner-pad"> </div>
+    </div>
+    <nav>
+        <div id="nav-bar">
+            <button type="button" data-message="Open the Articles page." class="nav-item" onclick="navigate_to_page('articles')">
+                Articles
+            </button>
+            <button type="button" class="nav-item" onclick="navigate_to_page('equipment')">
+                Equipment
+            </button>
+            <button type="button" class="nav-item" onclick="navigate_to_page('gallery')">
+                Gallery
+            </button>
+            <button type="button" class="nav-item" onclick="navigate_to_page('about')">
+                About
+            </button>
+        </div>
+    </nav>
+    <div id="pin-sensor-top"></div>
+    <main>
+        <div id="content" class="fade"></div>
+    </main>
+    <button id="back-to-top" onclick="scroll_to_origin()">
+        <h2>🡩 Back to Top</h2>
+    </button>
+    <div id="pin-sensor-bottom" class="pinned"></div>
+    <footer>
+        <div id="footer-content">
+            <div id="externals">
+                <div id="socials-container">
+                    <a href="https://youtube.com/@tabletopendeavors" class="social-link">
+                        <div class="social-item">
+                            <img class="social-icon" src="content/icons/youtube.png" \>
+                            <p>Youtube</p>
+                        </div>
+                    </a>
+                    <a href="https://bsky.app/profile/tabletopendeavors.bsky.social" class="social-link">
+                        <div class="social-item">
+                            <img class="social-icon" src="content/icons/bluesky.png" \>
+                            <p>BlueSky</p>
+                        </div>
+                    </a>
+                    <a href="mailto:contact@tabletopendeavors.com" class="social-link">
+                        <div class="social-item">
+                            <img class="social-icon" src="content/icons/email.png" \>
+                            <p>Email</p>
+                        </div>
+                    </a>
+                </div>
+                <div id="bmac-container">
+                    <a href="https://buymeacoffee.com/tabletopendeavors"><img src="content/icons/bmac-qr-code.png" class="bmac-qr"/></a>
+                </div>
+            </div>
+            <div class="legal-text">
+                Copyright &copy; 2026 TableTop Endeavors. All Rights Reserved. <a href="https://icons8.com/" title="social media icons">Social icons provided by icons8</a>.<br />I pledge to never use AI to displace human creativity.
+            </div>
+        </div>
+    </footer>
+<body>
