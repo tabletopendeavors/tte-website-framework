@@ -75,7 +75,9 @@ function register_observers() {
     const pin_sensor_bottom    = document.getElementById( "pin-sensor-bottom" );
     const article_controls_div = document.getElementById( "article-controls" );
     const back_to_top_div      = document.getElementById( "back-to-top" );
-    register_pin_observer( article_controls_div, pin_sensor_top );
+    if( article_controls_div ) {
+        register_pin_observer( article_controls_div, pin_sensor_top );
+    }
     register_pin_observer( back_to_top_div, pin_sensor_bottom );
 }
 
